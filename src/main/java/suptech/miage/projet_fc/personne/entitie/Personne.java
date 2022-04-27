@@ -7,7 +7,9 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -15,12 +17,13 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Personne {
-    @Id @Column(length = 20)
+    @Id  @GeneratedValue
+    @Column(length = 20)
     private int id ;
     private String nom ;
     private String prenom;
-    private String date_naissance ;
+    private Date date_naissance ;
     private String email ;
-    private String num_telephone ;
+    private int num_telephone ;
     private String photo_profil ;
 }
